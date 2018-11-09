@@ -1,7 +1,7 @@
 import os
 import sys
 import platform
-from setuptools import setup
+from setuptools import setup, find_packages
 
 import torch
 from torch.utils.cpp_extension import CUDA_HOME
@@ -11,13 +11,13 @@ from torch.utils.cpp_extension import CUDAExtension
 
 def get_extensions():
     this_dir = os.path.dirname(os.path.abspath(__file__))
-    warp_ctc_path = 'core/build'
+    warp_ctc_path = 'warpctc/core/build'
 
-    main_file = ['src/version.cpp']
-    cpu_file = ['src/cpu/cpu_ctc.cpp']
-    cuda_file = ['src/cuda/gpu_ctc.cu']
+    main_file = ['warpctc/src/version.cpp']
+    cpu_file = ['warpctc/src/cpu/cpu_ctc.cpp']
+    cuda_file = ['warpctc/src/cuda/gpu_ctc.cu']
 
-    include_dirs = ['core/include', 'src']
+    include_dirs = ['warpctc/core/include', 'warpctc/src']
     extra_compile_args = {"cxx": ['-std=c++11', '-fPIC']}
     define_macros = []
     source_files = main_file + cpu_file
@@ -57,7 +57,7 @@ def get_extensions():
     
     ext_modules = [
         extension(
-            "_warp_ctc",
+            "warpctc._warp_ctc",
             source_files,
             include_dirs=include_dirs,
             define_macros=define_macros,
@@ -75,10 +75,10 @@ setup(
     name="warpctc",
     version="0.1",
     author="StickCui",
-    url="https://github.com/StickCui",
+    url="https://github.com/StickCui/warp-ctc-pytorch",
     description="Baidu WarpCTC in pytorch",
-    # packages=find_packages(exclude=("configs", "tests",)),
-    # install_requires=requirements,
+    packages=find_packages(),
+    install_requires=['torch'],
     ext_modules=get_extensions(),
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
 )
