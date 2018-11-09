@@ -6,7 +6,7 @@ import unittest
 
 import torch
 from torch.autograd import Variable
-from warpctc.warp_ctc_py import CTCLoss
+from warpctc.warp_ctc import CTCLoss
 
 ctc_loss = CTCLoss(size_average=False, reduces=True)
 places = 5

@@ -1,0 +1,3 @@
+[submodule "warpctc/core"]
+	path = warpctc/core
+	url = https://github.com/baidu-research/warp-ctc
