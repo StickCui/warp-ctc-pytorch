@@ -13,6 +13,8 @@ When I use the source [SeanNaren/warp-ctc](https://github.com/SeanNaren/warp-ctc
 - pytorch>=0.4.0
 - cmake>=2.8
 
+Note: test environment: pytorch 0.4.1 & 1.0.0.dev20181106
+
 ## Installation
 
 ```bash
