@@ -6,7 +6,7 @@ An extension of Baidu [warp-ctc](https://github.com/baidu-research/warp-ctc) for
 
 This is a modified version of [SeanNaren/warp-ctc](https://github.com/SeanNaren/warp-ctc). I just modify the code to the new CPP Extensions API style of PyTorch.
 
-When I use the source [SeanNaren/warp-ctc](https://github.com/SeanNaren/warp-ctc), there are some problems happen. So I modify the source codes.
+When I use the source [SeanNaren/warp-ctc](https://github.com/SeanNaren/warp-ctc), some problems bother me. So I modify the source codes.
 
 ## Requirements
 
