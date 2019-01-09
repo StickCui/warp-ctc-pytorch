@@ -21,6 +21,7 @@ def get_extensions():
     extra_compile_args = {"cxx": ['-std=c++11', '-fPIC']}
     define_macros = []
     source_files = main_file + cpu_file
+    extension = CppExtension
 
     if torch.cuda.is_available() and CUDA_HOME is not None:
         extension = CUDAExtension
